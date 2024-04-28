@@ -1,0 +1,181 @@
+/* Globalne style */
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1b203d;
+    font-family: system-ui;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Nawigacja i tytuł */
+.logo {
+    margin: 0px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.logo span,
+.sidenav a:hover,
+.profile p span,
+.language-box a {
+    color: #f7403b;
+}
+
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #272c4a;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+
+.sidenav a,
+.profile p,
+.language-box a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    transition: 0.3s;
+    padding: 15px 8px 15px 32px;
+}
+
+.icon-a {
+    width: 100%;
+    display: block;
+}
+
+/* Główna treść */
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 300px;
+    height: 100vh; /* Zmienione z konkretnych wartości na wysokość okna przeglądarki */
+    color: white;
+    background-color: #1b203d; /* Zgodność z tłem */
+}
+
+/* Stopka */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #272c4a;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Layout */
+.col-div-6,
+.col-div-3 {
+    float: left;
+    width: 50%; /* Dla col-div-6, col-div-3 jest przeskalowany poniżej */
+    background-color: #272c4a;
+    color: white;
+}
+
+.col-div-3 {
+    width: calc(100% - 60px); /* Przeskalowanie dla col-div-3 */
+    margin: 0 30px;
+    padding-left: 20px;
+}
+
+/* Profil */
+.profile {
+    display: inline-block;
+    float: right;
+    width: 160px;
+}
+
+.pro-img {
+    float: left;
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 20%;
+}
+
+/* Flexbox */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Dodatkowe klasy */
+.col-md-4 {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.fixed-height {
+    height: 270px;
+    overflow-y: auto;
+    background-color: #272c4a;
+}
+
+h5,
+.profile p,
+.footer-text { /* Zmienione dla spójności stylu stopki */
+    color: white;
+}
+
+/* Styl paska językowego */
+.language-box {
+    position: fixed;
+    top: 0;
+    left: 75%;
+    right: 0;
+    background-color: #272c4a;
+    padding: 10px 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: row;
+}
+
+.close-btn {
+    background-color: black;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
+
+.language-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-links {
+    margin-top: 5px;
+}
+
+/* Kontener (jeśli jest potrzebny) */
+.container {
+    /* Tutaj mogą zostać dodane style dla kontenera, jeśli są potrzebne */
+}
+
+h2 {
+
+}
