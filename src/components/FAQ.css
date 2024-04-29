@@ -3,6 +3,7 @@ body {
     padding: 0px;
     background-color: #1b203d;
 
+
     font-family: system-ui;
 }
 .clearfix {
@@ -52,7 +53,8 @@ body {
     transition: margin-left .5s;
     padding: 16px;
     margin-left: 300px;
-    height: 700px;
+    height: 100vh;
+    margin-top: auto;
 }
 .head {
     padding: 20px;

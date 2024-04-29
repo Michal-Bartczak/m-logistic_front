@@ -10,6 +10,7 @@ import FAQ from "./components/FAQ";
 import TrackPackage from "./components/TrackPackage";
 import './components/style.css'
 import Login from "./components/Login";
+import MainRegisterComponent from './components/MainRegisterComponent'
 
 
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/track-package" element={<TrackPackage />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<MainRegisterComponent />} />
 
                 {/* Dodaj więcej tras dla innych linków, jeśli to konieczne */}
             </Routes>

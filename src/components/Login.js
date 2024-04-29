@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 const LoginComponent = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const location = useLocation();
+    const message = new URLSearchParams(location.search).get('from');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,7 +18,11 @@ const LoginComponent = () => {
             <div className="container ml-7 mt-5 ml-3">
                 <h2 style={{color: '#f7403b', fontSize: '3em', textAlign: 'center'}}>Logowanie</h2>
                 <h4 style={{textAlign: 'center', marginBottom: '50px'}}>Zaloguj się, aby móc w pełni korzystać z konta </h4>
-
+                {message === 'send-package' && (
+                    <div className="alert alert-info" style={{width: '30%', textAlign: 'center'}}>
+                        Ta usługa jest dostępna tylko dla zalogowanych użytkowników. Zaloguj się!
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit} id="logForm">
                     <div className="form-group">

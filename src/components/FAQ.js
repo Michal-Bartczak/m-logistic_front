@@ -9,7 +9,7 @@ const FAQComponent = () => {
                     zadawane pytania</h2>
                 <h4 style={{textAlign: 'center', marginBottom: '50px'}}>Zanim zadasz pytanie sprawdź czy nie ma go tutaj </h4>
                 <div className="row">
-                    <div className="col-md- mt-5 col-md-mt-5-custom">
+                    <div className="col-md- mt-5 col-md-mt-5-custom" style={{marginBottom: '40px'}}>
                         <ol className="list-styled">
                             <li>
                                 <h5> Jak założyć konto?</h5>
@@ -83,13 +83,8 @@ const FAQComponent = () => {
                                     zwróconego towaru.
                                 </p>
                             </li>
-                            <li>
-                                <h5> Gdzie mogę uzyskać pomoc?</h5>
-                                <p className="param" style={{color: '#808080'}}>
-                                    Jeśli masz jakiekolwiek pytania, skontaktuj się z naszym działem obsługi klienta.
-                                    Odpowiemy na Twoje pytania w ciągu 24 godzin.
-                                </p>
-                            </li>
+
+
                         </ol>
                     </div>
                 </div>

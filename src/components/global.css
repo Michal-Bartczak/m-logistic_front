@@ -4,6 +4,7 @@ body {
     padding: 0px;
     background-color: #1b203d;
     font-family: system-ui;
+
 }
 
 .clearfix {
@@ -63,6 +64,7 @@ body {
     height: 100vh; /* Zmienione z konkretnych wartości na wysokość okna przeglądarki */
     color: white;
     background-color: #1b203d; /* Zgodność z tłem */
+    margin-top: auto;
 }
 
 /* Stopka */
