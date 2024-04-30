@@ -8,7 +8,7 @@ const MainContent = () => {
         <div id="main">
             <div className="container text-center mt-5 mb-5" style={{padding: '0', marginTop: '0'}}>
                 <h1 className="logo" style={{fontSize: '4rem'}}>Witaj w <span>M</span>-Logistic</h1>
-                <p className="logo">Twój partner w zarządzaniu transportem i logistyką magazynową.</p>
+                <p className="logo">Twój partner w zarządzaniu transportem i logistyką magazynową</p>
 
                 <div className="container">
                     <div className="row align-items-center"> {/* Dodajemy align-items-center tutaj */}

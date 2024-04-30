@@ -3,7 +3,7 @@ import DriverRegistrationForm from './DriverRegistrationForm';
 import CustomerRegistrationForm from './CustomerRegistrationForm';
 
 const MainRegistrationComponent = () => {
-    const [userType, setUserType] = useState('driver'); // domyślnie ustawiony na 'driver'
+    const [userType, setUserType] = useState('customer'); // domyślnie ustawiony na 'driver'
 
     const handleUserTypeChange = (type) => {
         setUserType(type);
@@ -19,21 +19,21 @@ const MainRegistrationComponent = () => {
                     <button
                         type="button"
                         style={{width: '50%'}}
-                        className={`btn btn-secondary ${userType === 'driver' ? 'active' : ''}`}
-                        onClick={() => handleUserTypeChange('driver')}
-                    >
-                        Pracownik
-                    </button>
-                    <button
-                        type="button"
-                        style={{width: '50%'}}
                         className={`btn btn-secondary ${userType === 'customer' ? 'active' : ''}`}
                         onClick={() => handleUserTypeChange('customer')}
                     >
                         Klient
                     </button>
+                    <button
+                        type="button"
+                        style={{width: '50%'}}
+                        className={`btn btn-secondary ${userType === 'driver' ? 'active' : ''}`}
+                        onClick={() => handleUserTypeChange('driver')}
+                    >
+                        Kierowca
+                    </button>
                 </div>
-                {userType === 'driver' ? <DriverRegistrationForm/> : <CustomerRegistrationForm/>}
+                {userType === 'customer' ? <CustomerRegistrationForm/> : <DriverRegistrationForm/>  }
             </div>
         </div>
     );

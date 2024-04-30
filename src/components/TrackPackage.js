@@ -36,7 +36,7 @@ const TrackPackage = () => {
         <div id="main">
             <div className="container ml-7 mt-5 ml-3">
                 <h2 style={{color: '#f7403b', fontSize: '3em', textAlign: 'center'}}>Śledzenie przesyłki</h2>
-                <h4 style={{textAlign: 'center', marginBottom: '50px'}}>Wprowadź numer przesyłki poniżej, aby sprawdzić jej aktualny status. </h4>
+                <h4 style={{textAlign: 'center', marginBottom: '50px'}}>Wprowadź numer przesyłki poniżej, aby sprawdzić jej aktualny status </h4>
                 <form id="trackingForm" onSubmit={(e) => e.preventDefault()}>
                     <div className="form-group">
                         <label htmlFor="trackingNumber">Numer przesyłki:</label>
