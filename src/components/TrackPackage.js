@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import axios  from "axios";
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Dodaj to na początku pliku App.js
+
 
 const TrackPackage = () => {
     const [trackingNumber, setTrackingNumber] = useState('');
@@ -16,13 +18,19 @@ const TrackPackage = () => {
         }
     };
     const trackPackage = () => {
-        axios.post('/api/track-package-status', {trackingNumber})
+        axios.post('http://localhost:8080/api/track-package-status', { trackingNumber })
             .then(response => {
-                if (response.status === 404) {
-                    setErrorMessage('Nie znaleziono paczki o numerze: ' + trackingNumber);
+
+                if (response.status !== 200) {
+                    setErrorMessage('Wystąpił błąd podczas śledzenia przesyłki.');
                     return;
                 }
-                setOrderStatus(response.data);
+
+                if (response.data.orderStatus == null) {
+                    setErrorMessage(response.data.errorMessage || 'Nieznany błąd');
+                    return;
+                }
+                setOrderStatus(response.data.orderStatus);
             })
             .catch(error => {
                 if (error.response && error.response.status === 404) {
@@ -32,6 +40,7 @@ const TrackPackage = () => {
                 }
             });
     };
+
     return (
         <div id="main">
             <div className="container ml-7 mt-5 ml-3">
@@ -59,17 +68,22 @@ const TrackPackage = () => {
                 </form>
 
                 {orderStatus && (
-                    <div id="statusContainer">
+                    <div id="statusContainer" style={{marginTop: '20px'}}>
                         <h4 className="status-package">Aktualny status:</h4>
-                        <ul>
-                            <li className={orderStatus === "MAGAZYN" ? "status active" : "status"}>Twoja przesyłka jest
-                                w naszym magazynie. Niedługo ruszy do Ciebie!
+                        <ul style={{listStyle: 'none', paddingLeft: 0}}>
+                            <li className={orderStatus === "MAGAZYN" ? "active" : "status"}
+                                style={{marginBottom: '10px'}}>
+                                <i className="bi bi-box-seam" style={{marginRight: '10px'}}></i>
+                                Twoja przesyłka jest w naszym magazynie. Niedługo ruszy do Ciebie!
                             </li>
-                            <li className={orderStatus === "DOSTAWA" ? "status active" : "status"}>Twoja przesyłka jest
-                                już w drodze do Ciebie!
+                            <li className={orderStatus === "DOSTAWA" ? "active" : "status"}
+                                style={{marginBottom: '10px'}}>
+                                <i className="bi bi-truck" style={{marginRight: '10px'}}></i>
+                                Twoja przesyłka jest już w drodze do Ciebie!
                             </li>
-                            <li className={orderStatus === "DOSTARCZONO" ? "status active" : "status"}>Twoja przesyłka
-                                została już dostarczona!
+                            <li className={orderStatus === "DOSTARCZONO" ? "active" : "status"}>
+                                <i className="bi bi-check-circle" style={{marginRight: '10px'}}></i>
+                                Twoja przesyłka została już dostarczona!
                             </li>
                         </ul>
                     </div>

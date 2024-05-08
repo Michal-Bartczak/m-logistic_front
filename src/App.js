@@ -11,6 +11,7 @@ import TrackPackage from "./components/TrackPackage";
 import './components/style.css'
 import Login from "./components/Login";
 import MainRegisterComponent from './components/MainRegisterComponent'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 
