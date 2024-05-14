@@ -1,7 +1,7 @@
 import React from 'react';
 import FeatureBox from './FeatureBox';
 import { Link } from 'react-router-dom'; //
-import './style.css';
+import '../style/style.css';
 
 const MainContent = () => {
     return (

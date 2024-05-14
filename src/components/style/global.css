@@ -181,3 +181,14 @@ h5,
 h2 {
 
 }
+.sidenav .custom-icon {
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px; /* Vertical align the icon */
+}
+
+.sidenav .fa {
+    font-size: 20px; /* Adjust the font size as needed */
+}
