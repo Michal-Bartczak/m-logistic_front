@@ -1,3 +1,4 @@
+/* src/style/customerLayout.css */
 body {
     margin: 0px;
     padding: 0px;
@@ -5,13 +6,14 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-
     font-family: system-ui;
 }
+
 .clearfix {
     clear: both;
 }
-.logo{
+
+.logo {
     margin: 0px;
     margin-left: 28px;
     font-weight: bold;
@@ -19,9 +21,11 @@ body {
     margin-bottom: 30px;
     font-size: 30px;
 }
+
 .logo span {
     color: #f7403b;
 }
+
 .sidenav {
     height: 100%;
     width: 300px;
@@ -33,7 +37,6 @@ body {
     overflow: hidden;
     transition: 0.5s;
     padding-top: 30px;
-
 }
 
 .sidenav a {
@@ -43,14 +46,17 @@ body {
     color: #818181;
     transition: 0.3s;
 }
-.sidenav a:hover{
+
+.sidenav a:hover {
     color: #f1f1f1;
     background-color: #1b203d;
 }
+
 .icon-a {
     width: 100%;
     display: block;
 }
+
 #main {
     transition: margin-left .5s;
     padding: 16px;
@@ -61,52 +67,58 @@ body {
     margin-top: auto;
     flex: 1;
 }
+
 .head {
     padding: 20px;
-
 }
-.col-div-6{
+
+.col-div-6 {
     width: 50%;
     float: left;
 }
+
 .profile {
     display: inline-block;
     float: right;
     width: 160px;
 }
-.pro-img{
+
+.pro-img {
     float: left;
     width: 40px;
     margin-top: 5px;
     border-radius: 20%;
 }
-.profile p{
+
+.profile p {
     color: white;
     font-weight: 500;
     margin-left: 55px;
     margin-top: 10px;
     font-size: 13.5px;
 }
-.profile p span{
+
+.profile p span {
     font-weight: 400;
     font-size: 12px;
     display: block;
     color: #8e8e8e;
 }
-.nav{
+
+.nav {
     display: none;
 }
-.col-div-3{
 
+.col-div-3 {
     width: calc(100% - 60px); /* odejmujemy marginesy z obu stron */
     float: left;
     margin: 0 30px; /* marginesy po bokach */
-    background-color: #272c4a;/* dowolny kolor, który chcesz ustawić */
+    background-color: #272c4a; /* dowolny kolor, który chcesz ustawić */
     padding-left: 20px;
     color: white;
 
-
 }
+
 footer {
     position: relative;
     left: 0;
@@ -117,26 +129,28 @@ footer {
     text-align: center;
     padding: 5px 0;
 }
+
 .box {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    /*align-items: stretch;*/
 }
+
 .col-md-4 {
     padding: 1em;
     box-sizing: border-box;
 }
+
 .fixed-height {
     height: 270px;
     overflow-y: auto;
     background-color: #272c4a;
     color: white;
 }
-h5{
+
+h5 {
     color: white;
-
 }
-
 
 .language-box {
     position: fixed;
@@ -154,6 +168,7 @@ h5{
     text-decoration: none;
     flex-direction: row;
 }
+
 .close-btn {
     background-color: black; /* Zmiana tła na czarne */
     border: none;
@@ -172,6 +187,7 @@ h5{
     padding-left: 50px;
     padding-right: 50px;
 }
+
 .language-content {
     flex: 1; /* pozwala na rozciągnięcie zawartości w poziomie */
     display: flex;
@@ -179,12 +195,13 @@ h5{
     align-items: center; /* centruje zawartość w poziomie */
     justify-content: center; /* centruje zawartość w pionie */
 }
+
 .language-links {
     margin-top: 5px; /* dodaje odstęp między tekstem a linkami */
 }
-.container {
 
-}
+.container {}
+
 .col-md-mt-5-custom {
     margin-top: 0 !important; /* Usuwa margines górny */
 }
@@ -194,6 +211,7 @@ input {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .sidenav .custom-icon {
     width: 25px;
     height: 20px;
@@ -208,7 +226,50 @@ input {
 
 
 
+/* src/style/customerLayout.css */
 
+/* src/style/customerLayout.css */
+/* src/style/customerLayout.css */
 
+.accordion .accordion-item {
+    background-color: #272c4a;
+    border: none;
+    margin-bottom: 10px; /* Dodanie marginesu dolnego */
+}
 
+.accordion .accordion-header {
+    background-color: #272c4a;
+    color: white;
+}
 
+.accordion .accordion-body {
+    background-color: #1b203d;
+    color: white;
+}
+
+.accordion .accordion-button {
+    background-color: #272c4a;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    background-color: #1b203d;
+    color: white;
+}
+
+.accordion .accordion-button::after {
+    filter: invert(1);
+}
+
+.header-list {
+    margin-bottom: 20px; /* Dodanie marginesu dolnego */
+    margin-top: 20px; /* Dodanie marginesu górnego */
+}
+
+.box {
+    margin-bottom: 20px;
+    border-bottom: #1b203d 5px solid/* Dodanie marginesu dolnego dla box */
+}
