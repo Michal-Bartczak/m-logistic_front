@@ -1,17 +1,32 @@
-// src/components/OrderItem.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Accordion } from 'react-bootstrap';
-
-
-const fetchDataLp = (trackingNumber) => {
-    console.log(`Fetching data for LP with tracking number: ${trackingNumber}`);
-};
-
-const fetchLabelData = (trackingNumber) => {
-    console.log(`Fetching label data for tracking number: ${trackingNumber}`);
-};
+import { Link } from "react-router-dom";
+import axios from "axios";
+import PdfDocument from '../pdf/PdfDocument';
+import PdfDocumentLabel from "../pdf/PdfDocumentLabel";
 
 const OrderItem = ({ order, eventKey }) => {
+    const [showPdf, setShowPdf] = useState(false);
+    const [showLabelPdf, setShowLabelPdf] = useState(false);
+
+    const pdfData = {
+        trackingNumber: order.trackingNumber,
+        recipientName: order.nameRecipient,
+        address: `${order.zipCodeRecipient} ${order.cityRecipient}, ${order.streetRecipient}`,
+        weight: `${order.weight} kg`,
+        creationDate: order.creationDate
+    };
+
+    const handlePdfClick = () => {
+        setShowPdf(true);
+        setShowLabelPdf(false);  // Zapewnij, że tylko jeden dokument PDF może być otwarty na raz
+    };
+
+    const handleLabelPdfClick = () => {
+        setShowLabelPdf(true);
+        setShowPdf(false);  // Zapewnij, że tylko jeden dokument PDF może być otwarty na raz
+    };
+
     return (
         <Accordion.Item eventKey={eventKey} className="accordion-item">
             <Accordion.Header className="accordion-header">
@@ -40,13 +55,22 @@ const OrderItem = ({ order, eventKey }) => {
                     <div className="col-2 text-center">{order.price} zł</div>
                     <div className="col-2 text-center">{order.weigh} kg</div>
                     <div className="col-2 text-center">
-                        <a href="#" onClick={() => fetchDataLp(order.trackingNumber)} className="link-details-lp">List przewozowy</a>
+                        {showLabelPdf ? (
+                            <PdfDocumentLabel data={pdfData} onGenerated={() => setShowLabelPdf(false)} />
+                        ) : (
+                            <button className="btn btn-secondary" style={{ width: '150px' }} onClick={handleLabelPdfClick}>ETYKIETA</button>
+                        )}
                     </div>
                     <div className="col-2 text-center">
-                        <a href="#" onClick={() => fetchLabelData(order.trackingNumber)} className="link-details">Etykieta</a>
+                        {showPdf ? (
+                            <PdfDocument data={pdfData} onGenerated={() => setShowPdf(false)} />
+                        ) : (
+                            <button className="btn btn-secondary" style={{ width: '150px' }} onClick={handlePdfClick}>List przewozowy</button>
+                        )}
+
                     </div>
                     <div className="col-2 text-end">
-                        <a href="#" className="link-details">{order.provider}</a>
+                        {order.provider}
                     </div>
                 </div>
             </Accordion.Body>

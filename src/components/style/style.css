@@ -224,13 +224,6 @@ input {
     font-size: 20px; /* Adjust the font size as needed */
 }
 
-
-
-/* src/style/customerLayout.css */
-
-/* src/style/customerLayout.css */
-/* src/style/customerLayout.css */
-
 .accordion .accordion-item {
     background-color: #272c4a;
     border: none;
@@ -272,4 +265,7 @@ input {
 .box {
     margin-bottom: 20px;
     border-bottom: #1b203d 5px solid/* Dodanie marginesu dolnego dla box */
+}
+.text-end {
+    text-decoration: none;
 }

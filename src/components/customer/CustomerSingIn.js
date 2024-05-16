@@ -1,11 +1,8 @@
-// src/components/CustomerSignIn.js
-import React, { useEffect, useState } from 'react';
-import CustomerSidebar from '../customer/CustomerSidebar';
-import OrderItem from '../customer/OrderItem';
-import axios from 'axios';
-import { Accordion } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import OrderItem from "./OrderItem";
+import {Accordion} from "react-bootstrap";
+import CustomerSidebar from "./CustomerSidebar";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const CustomerSignIn = () => {
     const [orders, setOrders] = useState([]);
@@ -58,7 +55,7 @@ const CustomerSignIn = () => {
                         <h1 className="header-list">Lista zamówień</h1>
                     </div>
                 </div>
-
+                {/*Tu chce*/}
                 <div className="accordion-container">
                     <Accordion>
                         {orders.map((order, index) => (
@@ -70,5 +67,4 @@ const CustomerSignIn = () => {
         </div>
     );
 };
-
-export default CustomerSignIn;
+export default CustomerSignIn
