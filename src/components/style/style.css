@@ -269,3 +269,19 @@ input {
 .text-end {
     text-decoration: none;
 }
+#pagination {
+    display: flex;
+    justify-content: center;
+    background: #1b203d;
+}
+.pagination-btn {
+    background-color: #1b203d;
+    border: 1px solid white;
+    color: white;
+}
+
+.pagination-btn-active {
+    background-color: #f1f1f1;
+    border: 1px solid white;
+    color: black;
+}
